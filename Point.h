@@ -7,24 +7,29 @@
 class Point {
 
 private:
-  double x;
-  double y;
+    double x;
+    double y;
+    double z;
 
 public:
-  // Constructors
-  Point();                      // default constructor
-  Point(double x, double y);    // two-argument constructor
+    // Constructors
+    Point();                          // default constructor
+    Point(double x, double y, double z);    // three-argument constructor
 
-  // Destructor
-  ~Point();
+    // Destructor
+    ~Point();
 
-  // Mutator methods
-  void setX(double newX);
-  void setY(double newY);
+    // Mutator methods
+    void setX(double newX);
+    void setY(double newY);
+    void setZ(double newZ);
 
-  // Accessor methods
-  double getX();
-  double getY();
+    // Accessor methods
+    double getX() const;
+    double getY() const;
+    double getZ() const;
+    double computeArea(Point& a, Point& b, Point& c) const; //Takes pointers to 3 Points, and computes the area
+    double distanceTo(Point&) const; // Calculates the distance between two points
 };
 
 #endif // __point_h
