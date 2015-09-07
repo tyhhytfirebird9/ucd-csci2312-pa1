@@ -56,11 +56,3 @@ double Point::getZ() const {
 double Point::distanceTo(Point& secondPoint) const {
   return sqrt(pow((x - secondPoint.x),2) + pow((y - secondPoint.y),2) + pow((z - secondPoint.z),2));
 }
-
-double Point::computeArea(Point &a, Point &b, Point &c) const {
-  double sideC = a.distanceTo(b);
-  double sideA = b.distanceTo(c);
-  double sideB = a.distanceTo(c);
-  double s = (sideA + sideB + sideC) / 2;
-  return sqrt(s*(s-sideA)*(s-sideB)*(s-sideC));
-}

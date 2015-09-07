@@ -2,9 +2,12 @@
 // Created by Ivo Georgiev on 8/25/15.
 //
 #include <iostream>
+#include <cmath>
 #include "Point.h"
 
 using namespace std;
+
+double computeArea(Point& a, Point& b, Point& c); //Takes pointers to 3 Points, and computes the area
 
 int main(void) {
     Point pointA;
@@ -40,6 +43,14 @@ int main(void) {
         }
     }
 
-    cout << "The area of the triangle is " << pointA.computeArea(pointA, pointB, pointC);
+    cout << "The area of the triangle is " << computeArea(pointA, pointB, pointC);
     return 0;
+}
+
+double computeArea(Point &a, Point &b, Point &c){
+    double sideC = a.distanceTo(b);
+    double sideA = b.distanceTo(c);
+    double sideB = a.distanceTo(c);
+    double s = (sideA + sideB + sideC) / 2;
+    return sqrt(s*(s-sideA)*(s-sideB)*(s-sideC));
 }

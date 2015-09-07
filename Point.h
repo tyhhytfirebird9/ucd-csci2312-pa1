@@ -28,7 +28,6 @@ public:
     double getX() const;
     double getY() const;
     double getZ() const;
-    double computeArea(Point& a, Point& b, Point& c) const; //Takes pointers to 3 Points, and computes the area
     double distanceTo(Point&) const; // Calculates the distance between two points
 };
 
